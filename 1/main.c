@@ -18,27 +18,37 @@ int main(int argc, char **argv){
     char rotation;
     int move;
     int position = 50;
+
     while(fscanf(f, "%c%d\n", &rotation, &move) == 2 ){
-	if(rotation == 'L'){
-	    position-=move;
-	}else{
-	    position+=move;
-	}
-
-	while(position < 0){
-	    position = 100 + position;
-	}
-
-	if(position >= 100){
-	    position%=100;
-	}
-
-	printf("%c%d -- %d\n", rotation, move, position);
+	#ifdef DEBUG
+	    printf("%c%d -- %d\n", rotation, move, position);
+	#endif
 	
-	if(position == 0){
+	int previous_zero = position == 0;
+
+	result+=(move/100);
+	move%=100;
+	position += (rotation == 'R') ? move : -move;
+
+	int swaped = 0;
+	if(position < 0){
+	    position+=100;
+	    swaped = 1;
+	}
+
+	if(position > 99){
+	    position-=100;
+	    swaped = 1;
+	}
+
+	if(position == 0 || (!previous_zero && swaped == 1)){
+	    #ifdef DEBUG
+		printf("Add: %c%d\n", rotation, move);
+	    #endif
 	    result++;
 	}
     }
+
     printf("%d\n", result);
     fclose(f);
 }
