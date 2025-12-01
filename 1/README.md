@@ -8,6 +8,14 @@ make
 ```bash
 make make_debug=true
 ```
+- to compile just part 1
+```bash
+make part1
+```
+- to compile just part 2
+```bash
+make part2
+```
 - to run the tests
 ```bash
 make test
