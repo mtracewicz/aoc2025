@@ -1,12 +1,12 @@
 {
     "tasks": [
         {
-            "label": "build part_1",
+            "label": "Build current file",
             "type": "shell",
             "command": "make",
             "args": [
                 "make_debug=true",
-                "part_1"
+                "${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/${fileDirnameBasename}"
@@ -18,30 +18,10 @@
                 "kind": "build",
                 "isDefault": true 
             },
-            "detail": "Build part_1 executable."
+            "detail": "Build current file executable."
         },
         {
-            "label": "build part_2",
-            "type": "shell",
-            "command": "make",
-            "args": [
-                "make_debug=true",
-                "part_2"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/${fileDirnameBasename}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "detail": "Build part_2 executable."
-        },
-        {
-            "label": "clean",
+            "label": "Clean",
             "type": "shell",
             "command": "make",
             "args": [
@@ -60,18 +40,17 @@
             "detail": "Clean build artifacts."
         },
         {
-            "label": "all",
+            "label": "All",
             "dependsOn": [
-                "clean",
-                "build part_1",
-                "build part_2"
+                "Clean",
+                "Build current file",
             ],
             "dependsOrder": "sequence",
             "group": {
                 "kind": "build",
                 "isDefault": false
             },
-            "detail": "Clean artifacts and build part_1 and part_2 executables."
+            "detail": "Clean artifacts and build current file executable."
         }
     ],
     "version": "2.0.0"

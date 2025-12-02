@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Part 1",
+            "name": "Input",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/${fileDirnameBasename}/part_1",
+            "program": "${workspaceFolder}/${fileDirnameBasename}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -18,10 +18,10 @@
             "preLaunchTask": "all"
         },
         {
-            "name": "Part 1 - test data",
+            "name": "Test0",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/${fileDirnameBasename}/part_1",
+            "program": "${workspaceFolder}/${fileDirnameBasename}/${fileBasenameNoExtension}",
             "args": ["test0.txt"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -29,32 +29,6 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "all"
-        },
-        {
-            "name": "Part 2",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/${fileDirnameBasename}/part_2",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "all"
-        },
-        {
-            "name": "Part 2 - test data",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/${fileDirnameBasename}/part_2",
-            "args": ["test0.txt"],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "all"
-        }
+        }    
     ]
 }
