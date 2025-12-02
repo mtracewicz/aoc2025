@@ -1,0 +1,78 @@
+{
+    "tasks": [
+        {
+            "label": "build part_1",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "make_debug=true",
+                "part_1"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${fileDirnameBasename}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true 
+            },
+            "detail": "Build part_1 executable."
+        },
+        {
+            "label": "build part_2",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "make_debug=true",
+                "part_2"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${fileDirnameBasename}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Build part_2 executable."
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${fileDirnameBasename}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "none",
+                "isDefault": false
+            },
+            "detail": "Clean build artifacts."
+        },
+        {
+            "label": "all",
+            "dependsOn": [
+                "clean",
+                "build part_1",
+                "build part_2"
+            ],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Clean artifacts and build part_1 and part_2 executables."
+        }
+    ],
+    "version": "2.0.0"
+}
