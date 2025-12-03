@@ -15,7 +15,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "all"
+            "preLaunchTask": "All"
         },
         {
             "name": "Test0",
@@ -28,7 +28,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "all"
+            "preLaunchTask": "All"
         }    
     ]
 }
