@@ -1,6 +1,6 @@
 CC=clang
 ifeq (${make_debug}, true)
-	CFLAGS = -Wall -std=c99 -g -O0 -DDEBUG
+	CFLAGS = -Wall -std=c99 -g -O0 -DDEBUG -fsanitize=address
 else
 	CFLAGS = -Wall -std=c99 -O2 
 endif
