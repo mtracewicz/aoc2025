@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	}
 
 	long long result = 0;
-	char line[100];
+	char line[101]; //Lines can be up to 100 characters long
 	while (fscanf(f, "%s", line) == 1)
 	{
 		int last[9] = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
