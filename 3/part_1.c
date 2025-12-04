@@ -59,6 +59,6 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-	printf("resault = %lld\n", result);
+	printf("result = %lld\n", result);
 	fclose(f);
 }
